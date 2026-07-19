@@ -1,0 +1,13 @@
+{
+  "name": "THE LAST HUMAN ($LAST)",
+  "short_name": "$LAST",
+  "description": "When everything becomes AI... Be The Last Human. A Solana community token.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#06070A",
+  "theme_color": "#06070A",
+  "icons": [
+    { "src": "assets/logo/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/logo/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
