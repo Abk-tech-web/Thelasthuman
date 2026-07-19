@@ -284,32 +284,62 @@
 
   /* ---------------------------------------------------------
      Live stats: DexScreener public API (no key required)
+     Resolves the best-liquidity pair directly from the token
+     contract address — no manual pair address needed.
      --------------------------------------------------------- */
+  async function resolveBestPair() {
+    const cfg = state.config;
+    const pinnedPair = cfg?.dex?.dexscreenerPairAddress;
+    const tokenAddr = cfg?.token?.contractAddress;
+
+    // If a specific pair is pinned in config, use it as-is.
+    if (pinnedPair) {
+      const res = await fetch(`https://api.dexscreener.com/latest/dex/pairs/solana/${pinnedPair}`, { cache: 'no-store' });
+      if (!res.ok) throw new Error('DexScreener pair request failed');
+      const json = await res.json();
+      const pair = json.pairs && json.pairs[0];
+      if (!pair) throw new Error('No pair data for pinned pair');
+      return pair;
+    }
+
+    // Otherwise resolve every pair for the token and pick the
+    // one with the most liquidity (i.e. the "real" trading pair).
+    if (!tokenAddr) throw new Error('No contract address set');
+    const res = await fetch(`https://api.dexscreener.com/latest/dex/tokens/${tokenAddr}`, { cache: 'no-store' });
+    if (!res.ok) throw new Error('DexScreener token request failed');
+    const json = await res.json();
+    const pairs = (json.pairs || []).filter(p => p.chainId === 'solana');
+    if (!pairs.length) throw new Error('No live pairs found for this token yet');
+    pairs.sort((a, b) => (b.liquidity?.usd || 0) - (a.liquidity?.usd || 0));
+    return pairs[0];
+  }
+
   async function loadStats() {
-    const pairAddr = state.config?.dex?.dexscreenerPairAddress;
+    const cfg = state.config;
+    const tokenAddr = cfg?.token?.contractAddress;
+    const pinnedPair = cfg?.dex?.dexscreenerPairAddress;
     const grid = $('#statsGrid');
     const note = $('#dataNote');
     if (!grid) return;
 
-    if (!pairAddr) {
+    if (!tokenAddr && !pinnedPair) {
       renderStatsEmpty();
-      if (note) { note.querySelector('.dot').classList.add('off'); note.querySelector('span').textContent = 'Live feed connects automatically once the $LAST liquidity pool is set in data/config.json.'; }
+      if (note) { note.querySelector('.dot').classList.add('off'); note.querySelector('span').textContent = 'Live feed connects automatically once a contract address is set in data/config.json.'; }
       return;
     }
 
     try {
-      const res = await fetch(`https://api.dexscreener.com/latest/dex/pairs/solana/${pairAddr}`, { cache: 'no-store' });
-      if (!res.ok) throw new Error('DexScreener request failed');
-      const json = await res.json();
-      const pair = json.pairs && json.pairs[0];
-      if (!pair) throw new Error('No pair data returned');
+      const pair = await resolveBestPair();
       state.dexPair = pair;
       renderStats(pair);
-      if (note) { note.querySelector('.dot').classList.remove('off'); note.querySelector('span').textContent = 'Live — sourced from DexScreener, refreshed every 30s.'; }
+      if (note) {
+        note.querySelector('.dot').classList.remove('off');
+        note.querySelector('span').textContent = `Live — sourced from DexScreener (${pair.dexId}), refreshed every 30s.`;
+      }
     } catch (err) {
       console.warn('[LAST] stats fetch failed', err);
       renderStatsEmpty(true);
-      if (note) { note.querySelector('.dot').classList.add('off'); note.querySelector('span').textContent = 'Live feed temporarily unavailable — retrying automatically.'; }
+      if (note) { note.querySelector('.dot').classList.add('off'); note.querySelector('span').textContent = 'No live pool found yet for this contract address — retrying automatically.'; }
     }
   }
 
@@ -390,14 +420,17 @@
      --------------------------------------------------------- */
   function initChart() {
     const frame = $('#chartFrame');
-    const pairAddr = state.config?.dex?.dexscreenerPairAddress;
     if (!frame) return;
-    if (!pairAddr) {
-      frame.innerHTML = '<div class="chart-empty">Chart activates automatically once the $LAST pool is live.<br>Set dex.dexscreenerPairAddress in data/config.json.</div>';
+    const pairAddr = state.dexPair?.pairAddress;
+    const tokenAddr = state.config?.token?.contractAddress;
+    const embedTarget = pairAddr || tokenAddr;
+
+    if (!embedTarget) {
+      frame.innerHTML = '<div class="chart-empty">Chart activates automatically once a contract address is set in data/config.json.</div>';
       return;
     }
     const iframe = document.createElement('iframe');
-    iframe.src = `https://dexscreener.com/solana/${pairAddr}?embed=1&theme=dark&trades=0&info=0`;
+    iframe.src = `https://dexscreener.com/solana/${embedTarget}?embed=1&theme=dark&trades=0&info=0`;
     iframe.loading = 'lazy';
     frame.innerHTML = '';
     frame.appendChild(iframe);
