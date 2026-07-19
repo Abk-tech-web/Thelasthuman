@@ -1,1 +1,23 @@
-
+{
+  "token": {
+    "name": "THE LAST HUMAN",
+    "symbol": "$LAST",
+    "chain": "solana",
+    "decimals": 9,
+    "contractAddress": "",
+    "totalSupply": 1000000000
+  },
+  "dex": {
+    "dexscreenerPairAddress": "",
+    "dexscreenerChainId": "solana"
+  },
+  "social": {
+    "telegram": "https://t.me/thelasthuman1",
+    "twitter": ""
+  },
+  "notes": [
+    "Set token.contractAddress once the mint exists — this powers Buy links, DexScreener/Birdeye lookups and the copy-CA button.",
+    "Set dex.dexscreenerPairAddress once a liquidity pool exists — this powers the embedded chart and the live stats bar.",
+    "Set social.twitter to your X profile URL to activate that icon; it stays hidden until filled in."
+  ]
+}
