@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>THE LAST HUMAN ($LAST) — When Everything Becomes AI, Be The Last Human</title>
+<meta name="description" content="THE LAST HUMAN ($LAST) is a Solana community token built on one idea: in a world being automated by AI, human creativity, conviction and community are irreplaceable.">
+<meta name="theme-color" content="#06070A">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="THE LAST HUMAN ($LAST)">
+<meta property="og:description" content="When everything becomes AI... Be The Last Human. A Solana community token for the humans who refuse to be automated away.">
+<meta property="og:image" content="assets/logo/LASTLOGO.png">
+<meta property="og:url" content="https://thelasthuman.example">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="THE LAST HUMAN ($LAST)">
+<meta name="twitter:description" content="When everything becomes AI... Be The Last Human.">
+<meta name="twitter:image" content="assets/logo/LASTLOGO.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-mark">
+    <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="42" stroke="#1C2622" stroke-width="4"/><path d="M50 8a42 42 0 0 1 42 42" stroke="#39FF88" stroke-width="4" stroke-linecap="round"/></svg>
+  </div>
+  <div class="loader-text">Initializing $LAST</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+
+<!-- Nav -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand">
+      <img src="assets/logo/LASTLOGO.png" alt="THE LAST HUMAN logo" width="32" height="32">
+      THE LAST HUMAN <span class="ticker">$LAST</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#narrative">Manifesto</a></li>
+        <li><a href="#stats">Live Data</a></li>
+        <li><a href="#tokenomics">Tokenomics</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <div class="nav-socials">
+        <a class="icon-btn js-telegram" href="https://t.me/thelasthuman1" target="_blank" rel="noopener" aria-label="Telegram">
+          <svg viewBox="0 0 24 24"><path d="M21.94 4.6 18.6 20.36c-.25 1.1-.9 1.37-1.83.86l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.16 9.4-8.5c.41-.36-.09-.56-.63-.2L6.6 12.75 1.6 11.2c-1.08-.34-1.1-1.08.23-1.6L20.5 3.36c.9-.32 1.7.2 1.44 1.24Z" fill="currentColor"/></svg>
+        </a>
+        <a class="icon-btn js-twitter" href="#" target="_blank" rel="noopener" aria-label="X (Twitter)" style="display:none">
+          <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.9L4.4 22H1.3l8.1-9.3L1 2h7l4.9 6.3L18.9 2Zm-1.2 18.2h1.7L6.4 3.7H4.6l13.1 16.5Z" fill="currentColor"/></svg>
+        </a>
+      </div>
+      <button id="walletBtn" class="btn btn-ghost btn-sm">Connect Wallet</button>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu">
+  <a href="#narrative">Manifesto</a>
+  <a href="#stats">Live Data</a>
+  <a href="#tokenomics">Tokenomics</a>
+  <a href="#roadmap">Roadmap</a>
+  <a href="#community">Community</a>
+  <a href="#faq">FAQ</a>
+  <div class="nav-socials">
+    <a class="icon-btn js-telegram" href="https://t.me/thelasthuman1" target="_blank" rel="noopener" aria-label="Telegram">
+      <svg viewBox="0 0 24 24"><path d="M21.94 4.6 18.6 20.36c-.25 1.1-.9 1.37-1.83.86l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.16 9.4-8.5c.41-.36-.09-.56-.63-.2L6.6 12.75 1.6 11.2c-1.08-.34-1.1-1.08.23-1.6L20.5 3.36c.9-.32 1.7.2 1.44 1.24Z" fill="currentColor"/></svg>
+    </a>
+    <a class="icon-btn js-twitter" href="#" target="_blank" rel="noopener" aria-label="X (Twitter)" style="display:none">
+      <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.9L4.4 22H1.3l8.1-9.3L1 2h7l4.9 6.3L18.9 2Zm-1.2 18.2h1.7L6.4 3.7H4.6l13.1 16.5Z" fill="currentColor"/></svg>
+    </a>
+  </div>
+</div>
+
+<main id="main">
+<div id="top"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-media">
+    <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/logo/LASTLOGO.png">
+      <source src="assets/videos/last.mp4" type="video/mp4">
+    </video>
+    <canvas id="heroCanvas" style="display:none;position:absolute;inset:0;"></canvas>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <img class="hero-logo" src="assets/logo/LASTLOGO.png" alt="">
+    <div class="hero-kicker">Solana · Community Token</div>
+    <h1 class="hero-title">
+      <span class="js-scramble" data-text="THE LAST HUMAN">THE LAST HUMAN</span><br>
+      <span class="scramble js-scramble" data-text="$LAST">$LAST</span>
+    </h1>
+    <p class="hero-slogan">When everything becomes AI…<br><strong>Be The Last Human.</strong></p>
+    <div class="hero-cta">
+      <a href="#stats" class="btn btn-primary js-buy-link">Buy $LAST</a>
+      <a href="#narrative" class="btn btn-ghost">Read The Manifesto</a>
+    </div>
+    <div class="ca-pill">
+      <span>CA:</span>
+      <span class="js-ca-text js-ca-full">Contract not yet live</span>
+      <button class="js-copy-ca" type="button">Copy</button>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="line"></div></div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-track" id="tickerTrack">
+    <div class="ticker-item"><b>$LAST feed connecting…</b></div>
+    <div class="ticker-item"><b>$LAST feed connecting…</b></div>
+  </div>
+</div>
+
+<!-- NARRATIVE -->
+<section class="section narrative" id="narrative">
+  <div class="container">
+    <div class="narrative-grid">
+      <div class="narrative-lead reveal">
+        <span class="eyebrow">The Manifesto</span>
+        The world is changing faster than ever — but there is <em>one thing AI can never replace</em>.
+      </div>
+      <div class="narrative-body reveal">
+        <p>Artificial Intelligence is writing code. It creates art. It generates music. It trades the markets. It replaces jobs. It floods social media with bots.</p>
+        <p>Every day, the line between human and machine becomes harder to see.</p>
+        <p>But there is one thing AI can never replace: <strong>the human spirit.</strong></p>
+        <p><strong>THE LAST HUMAN ($LAST)</strong> is more than a meme coin — it's a movement. It represents creativity over automation. Conviction over algorithms. Community over bots. Freedom over control.</p>
+        <p>This isn't a fight against technology. We embrace innovation. But we believe the future should never forget the people who built it.</p>
+        <p>In a digital world increasingly dominated by AI, The Last Human stands as a symbol of resilience, originality, and the unstoppable power of real communities.</p>
+        <span class="divider-word">Every holder becomes part of a story</span>
+        <p>Not just another trader. Not just another wallet. <strong>A Human.</strong></p>
+        <p>As AI continues to reshape the world, we choose to preserve what makes us unique: imagination, humor, emotion, courage, dreams.</p>
+        <p>The Last Human isn't built on fear. It's built on hope — hope that real people can still create the next great movement, that communities will always be stronger than algorithms, that humanity will always have the final word.</p>
+        <p><strong>This is not just another meme. This is a digital revolution powered by humans.</strong></p>
+      </div>
+    </div>
+
+    <div class="mv-grid">
+      <div class="mv-card reveal">
+        <h3>Mission</h3>
+        <p>To unite people from around the world under one symbol of human creativity, resilience, and freedom in the age of Artificial Intelligence.</p>
+      </div>
+      <div class="mv-card reveal">
+        <h3>Vision</h3>
+        <p>To become the world's most recognizable community-driven meme coin, reminding everyone that while technology evolves, humanity remains irreplaceable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE STATS -->
+<section class="section" id="stats">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Live Dashboard</span>
+      <h2 class="section-title">The numbers, in real time.</h2>
+      <p class="section-sub">Pulled directly from on-chain liquidity data. No manual updates, no stale screenshots.</p>
+    </div>
+
+    <div class="stats-grid reveal" id="statsGrid">
+      <div class="stat-cell"><div class="stat-label">Price</div><div class="stat-value loading" id="stat-price">Pending</div></div>
+      <div class="stat-cell"><div class="stat-label">Market Cap</div><div class="stat-value loading" id="stat-mcap">Pending</div></div>
+      <div class="stat-cell"><div class="stat-label">Liquidity</div><div class="stat-value loading" id="stat-liquidity">Pending</div></div>
+      <div class="stat-cell"><div class="stat-label">24H Volume</div><div class="stat-value loading" id="stat-vol">Pending</div></div>
+      <div class="stat-cell"><div class="stat-label">FDV</div><div class="stat-value loading" id="stat-fdv">Pending</div></div>
+      <div class="stat-cell"><div class="stat-label">24H Change</div><div class="stat-value loading" id="stat-change">Pending</div></div>
+      <div class="stat-cell"><div class="stat-label">24H Buys</div><div class="stat-value loading" id="stat-buys">Pending</div></div>
+      <div class="stat-cell"><div class="stat-label">24H Sells</div><div class="stat-value loading" id="stat-sells">Pending</div></div>
+      <div class="stat-cell"><div class="stat-label">Buy / Sell Ratio</div><div class="stat-value loading" id="stat-ratio">Pending</div></div>
+      <div class="stat-cell"><div class="stat-label">Total Supply</div><div class="stat-value">1,000,000,000</div><div class="stat-sub">$LAST, fixed</div></div>
+      <div class="stat-cell"><div class="stat-label">Circulating Supply</div><div class="stat-value js-counter" data-count="650000000">Pending</div><div class="stat-sub">Updates as vesting unlocks</div></div>
+      <div class="stat-cell"><div class="stat-label">Holders</div><div class="stat-value loading" id="stat-holders">Pending</div><div class="stat-sub">Via Solana RPC / Helius</div></div>
+    </div>
+    <div class="data-note" id="dataNote"><span class="dot off"></span><span>Connecting to live feed…</span></div>
+
+    <div class="chart-panel reveal">
+      <div class="chart-tabs">
+        <button class="chart-tab active" type="button">DexScreener</button>
+      </div>
+      <div class="chart-frame" id="chartFrame">
+        <div class="chart-empty">Loading chart…</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOKENOMICS -->
+<section class="section" id="tokenomics">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Tokenomics</span>
+      <h2 class="section-title">Built for the community, not for exit liquidity.</h2>
+      <p class="section-sub">1,000,000,000 $LAST total supply. No hidden mints, no team dumps — allocations lock on-chain.</p>
+    </div>
+    <div class="tokenomics-grid reveal">
+      <div class="donut-wrap">
+        <svg id="donutSvg" viewBox="0 0 200 200"></svg>
+      </div>
+      <ul class="token-list" id="tokenList"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="section roadmap" id="roadmap">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Roadmap</span>
+      <h2 class="section-title">Four phases. One direction.</h2>
+    </div>
+    <div class="roadmap-track">
+      <div class="roadmap-phase done reveal">
+        <div class="roadmap-label">Phase 01 — Ignition</div>
+        <div class="roadmap-title">Foundations</div>
+        <ul class="roadmap-items">
+          <li>Brand, manifesto and website launch</li>
+          <li>Telegram community opens</li>
+          <li>Contract deployment &amp; liquidity lock</li>
+        </ul>
+      </div>
+      <div class="roadmap-phase reveal">
+        <div class="roadmap-label">Phase 02 — Signal</div>
+        <div class="roadmap-title">Community Growth</div>
+        <ul class="roadmap-items">
+          <li>DexScreener &amp; Birdeye trending pushes</li>
+          <li>Community airdrop &amp; referral rewards</li>
+          <li>First CEX listing applications</li>
+        </ul>
+      </div>
+      <div class="roadmap-phase reveal">
+        <div class="roadmap-label">Phase 03 — Momentum</div>
+        <div class="roadmap-title">Recognition</div>
+        <ul class="roadmap-items">
+          <li>Influencer &amp; media partnerships</li>
+          <li>Merch drop for holders</li>
+          <li>Mid-tier CEX listings</li>
+        </ul>
+      </div>
+      <div class="roadmap-phase reveal">
+        <div class="roadmap-label">Phase 04 — Legacy</div>
+        <div class="roadmap-title">The Movement</div>
+        <ul class="roadmap-items">
+          <li>DAO-style community treasury voting</li>
+          <li>Tier-1 exchange listings</li>
+          <li>Long-term ecosystem tools for holders</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="section community" id="community">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Community</span>
+      <h2 class="section-title">You're not a wallet. You're a Human.</h2>
+      <p class="section-sub">Join thousands choosing conviction over algorithms.</p>
+    </div>
+    <div class="community-socials reveal">
+      <a class="icon-btn js-telegram" href="https://t.me/thelasthuman1" target="_blank" rel="noopener" aria-label="Telegram">
+        <svg viewBox="0 0 24 24"><path d="M21.94 4.6 18.6 20.36c-.25 1.1-.9 1.37-1.83.86l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.16 9.4-8.5c.41-.36-.09-.56-.63-.2L6.6 12.75 1.6 11.2c-1.08-.34-1.1-1.08.23-1.6L20.5 3.36c.9-.32 1.7.2 1.44 1.24Z" fill="currentColor"/></svg>
+      </a>
+      <a class="icon-btn js-twitter" href="#" target="_blank" rel="noopener" aria-label="X (Twitter)" style="display:none">
+        <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.9L4.4 22H1.3l8.1-9.3L1 2h7l4.9 6.3L18.9 2Zm-1.2 18.2h1.7L6.4 3.7H4.6l13.1 16.5Z" fill="currentColor"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERBOARD + AIRDROP -->
+<section class="section">
+  <div class="container">
+    <div class="util-grid">
+      <div class="util-card reveal">
+        <h3>Community Leaderboard <span class="demo-flag">Demo</span></h3>
+        <p class="desc">Earn points for daily engagement. Connect a wallet to see your rank.</p>
+        <div id="leaderList"></div>
+        <button id="dailyClaimBtn" class="btn btn-primary btn-sm" style="margin-top:20px;">Claim Daily Reward</button>
+        <p class="desc" id="dailyStatus" style="margin:10px 0 0;"></p>
+      </div>
+      <div class="util-card reveal">
+        <h3>Airdrop Checker <span class="demo-flag">Demo</span></h3>
+        <p class="desc">Check demo eligibility now. The real snapshot is announced separately on Telegram.</p>
+        <form id="airdropForm">
+          <div class="field-row">
+            <input type="text" id="airdropWallet" placeholder="Enter your Solana wallet address" autocomplete="off">
+            <button class="btn btn-primary btn-sm" type="submit">Check</button>
+          </div>
+        </form>
+        <div class="util-result" id="airdropResult"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="section-title">Questions, answered.</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q">What is THE LAST HUMAN?<span class="plus">+</span></button>
+        <div class="faq-a"><p>A Solana community token built around the idea that human creativity and conviction can't be automated away, no matter how far AI advances.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is there a presale?<span class="plus">+</span></button>
+        <div class="faq-a"><p>No. $LAST launches with liquidity locked and no private allocation — everyone gets the same access at launch.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do I buy $LAST?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Get SOL into a wallet like Phantom, then swap it for $LAST on Jupiter or Raydium using the official contract address — always verify the CA in our Telegram first.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is the contract audited?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Liquidity lock and mint authority status will be published alongside the contract address at launch, so anyone can verify on-chain.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Where can I follow updates?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Telegram is the primary channel for verified announcements — links elsewhere should always be double-checked against it.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="brand"><img src="assets/logo/LASTLOGO.png" alt="" width="28" height="28">THE LAST HUMAN</a>
+        <p>When everything becomes AI… Be The Last Human. A Solana community token for creativity over automation.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="#narrative">Manifesto</a>
+          <a href="#tokenomics">Tokenomics</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <a class="js-telegram" href="https://t.me/thelasthuman1" target="_blank" rel="noopener">Telegram</a>
+          <a class="js-twitter" href="#" target="_blank" rel="noopener" style="display:none">X (Twitter)</a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-disclaimer">$LAST is a community meme token with no intrinsic value or guaranteed financial return. It is not an investment, security, or financial product, and there is no formal team or roadmap promise beyond what is stated here. Cryptocurrency is volatile and speculative — only ever risk what you can afford to lose, and do your own research before buying.</p>
+    <div class="footer-bottom">
+      <p>© 2026 THE LAST HUMAN. Built by the community.</p>
+      <p class="mono">$LAST · Solana</p>
+    </div>
+  </div>
+</footer>
+
+<!-- AI ASSISTANT -->
+<button class="ai-launcher" id="aiLauncher" aria-label="Open AI assistant">
+  <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2v1h1a3 3 0 0 1 3 3v1h1a1 1 0 1 1 0 2h-1v2h1a1 1 0 1 1 0 2h-1v1a3 3 0 0 1-3 3h-1v1a2 2 0 1 1-4 0v-1H9a3 3 0 0 1-3-3v-1H5a1 1 0 1 1 0-2h1v-2H5a1 1 0 0 1 0-2h1V8a3 3 0 0 1 3-3h1V4a2 2 0 0 1 2-2Zm-3 7a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H9Zm.5 2.5h1v1h-1v-1Zm4 0h1v1h-1v-1Z" fill="currentColor"/></svg>
+</button>
+<div class="ai-panel" id="aiPanel">
+  <div class="ai-head"><span class="dot"></span><strong>Human Signal</strong><span>· $LAST assistant</span></div>
+  <div class="ai-body" id="aiBody">
+    <div class="ai-msg bot">Hey, human. Ask me anything about $LAST — tokenomics, roadmap, how to buy.</div>
+  </div>
+  <div class="ai-suggest">
+    <button class="ai-chip" type="button">How do I buy $LAST?</button>
+    <button class="ai-chip" type="button">Tokenomics</button>
+    <button class="ai-chip" type="button">Is it safe?</button>
+  </div>
+  <div class="ai-input-row">
+    <input id="aiInput" type="text" placeholder="Ask about $LAST…" autocomplete="off">
+    <button id="aiSend" aria-label="Send"><svg viewBox="0 0 24 24"><path d="M3 11.5 21 3l-6 18-4-7-8-2.5Z" fill="currentColor"/></svg></button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/script.js" defer></script>
+</body>
+</html>
